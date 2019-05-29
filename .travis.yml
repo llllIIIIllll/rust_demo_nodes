@@ -13,7 +13,7 @@ before_script:
 # the main build
 script:
   - |
-      ./tc cargo build &&
+      ./tc cargo build
 after_success:
   # upload the documentation from the build with beta (automatically only actually
   # runs on the master branch)
