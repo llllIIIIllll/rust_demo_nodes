@@ -1,0 +1,7 @@
+[package]
+name = "hello-rst"
+version = "0.1.0"
+authors = ["david.wang <david.wang@autoflight.com>"]
+edition = "2018"
+
+[dependencies]

@@ -1,0 +1,20 @@
+language: rust
+# run builds for both the nightly and beta branch
+rust:
+  - nightly
+  - beta
+
+# load travis-cargo
+before_script:
+  - git clone --depth 1 https://github.com/huonw/travis-cargo
+  # make a short alias (`alias` itself doesn't work)
+  - ln -s ./travis-cargo/travis-cargo.py tc
+
+# the main build
+script:
+  - |
+      ./tc cargo build &&
+after_success:
+  # upload the documentation from the build with beta (automatically only actually
+  # runs on the master branch)
+  - ./tc run
